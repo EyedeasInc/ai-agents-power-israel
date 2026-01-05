@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@
             --text-main: #FFFFFF;
             --text-muted: #AFC7FF;
             --border-subtle: rgba(175,199,255,0.35);
+            --nav-offset: 110px;
         }
 
         * {
@@ -53,7 +55,6 @@
         .nav-inner {
             max-width: 1080px;
             margin: 0 auto;
-            /*padding: 14px 20px;*/
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -64,18 +65,6 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
-        }
-
-        .brand-title {
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-size: 13px;
-        }
-
-        .brand-sub {
-            font-size: 11px;
-            color: var(--text-muted);
         }
 
         .nav-links {
@@ -109,7 +98,6 @@
             gap: 6px;
             padding: 8px 16px;
             border-radius: 999px;
-            /*border: 1px solid transparent;*/
             font-size: 13px;
             font-weight: 500;
             text-decoration: none;
@@ -118,7 +106,6 @@
         }
 
         .btn-primary {
-            /*background: linear-gradient(135deg, var(--primary), var(--accent));*/
             background: linear-gradient(135deg, #1ECFFF, #FFB94A, #FF3F68);
             color: #030836;
             box-shadow: 0 5px 15px rgba(37, 99, 235, 0.55);
@@ -144,7 +131,6 @@
         .hero-wrap {
             position: relative;
             width: 100%;
-            /*background: linear-gradient(to bottom, rgba(3,7,18,0.88), rgba(3,7,18,0.92)), url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Microsoft_Herzliya_campus.jpg") center/cover no-repeat;*/
             background: linear-gradient(to bottom, rgba(3,0, 18, 0.30), rgba(3, 0, 7,0.92)), url("imgs/Microsoft_Herzliya_campus.png") center/cover no-repeat;
             padding: 72px 0 80px;
             border-bottom: 1px solid rgba(15,23,42,0.85);
@@ -159,6 +145,30 @@
             grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
             gap: 48px;
             align-items: center;
+        }
+
+        .hero-tagline {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 540px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 26px;
+        }
+
+        .hero-meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #e5e7eb;
         }
 
         .hero-kicker {
@@ -227,6 +237,7 @@
             color: #e5e7eb;
         }
 
+
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
@@ -242,6 +253,7 @@
         .hero-right {
             position: relative;
         }
+
 
         .hero-card {
             background: radial-gradient(circle at top left, rgba(30, 207, 255, 0.45), transparent 56%), radial-gradient(circle at top right, rgba(255, 63, 104, 0.50), transparent 55%), radial-gradient(circle at bottom right, rgba(255, 185, 74, 0.60), transparent 55%), linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
@@ -305,19 +317,12 @@
             font-weight: 600;
         }
 
-        .hero-footer-line {
-            margin-top: 12px;
-            padding-top: 10px;
-            border-top: 1px dashed rgba(148,163,184,0.4);
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
         /* SECTIONS */
         .section {
             max-width: 1080px;
             margin: 0 auto;
             padding: 24px 20px 56px;
+            scroll-margin-top: var(--nav-offset);
         }
 
         .section-header {
@@ -336,22 +341,6 @@
             margin-bottom: 6px;
         }
 
-        .section-kicker-small {
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-
-        .section-kicker-small-highlight {
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #FFB94A;
-            margin-bottom: 6px;
-        }
-
         .section-title {
             font-family: 'Poppins', sans-serif;
             font-size: 24px;
@@ -360,13 +349,6 @@
             letter-spacing: 0.02em;
             color: #FFB94A;
             margin: 0;
-        }
-
-        .section-lead {
-            font-size: 14px;
-            color: var(--text-muted);
-            max-width: 520px;
-            line-height: 1.6;
         }
 
         .section-grid {
@@ -404,56 +386,159 @@
                 line-height: 1.7;
             }
 
-        /* AGENDA */
-        .agenda-columns {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
+        /* TIMELINE (UPDATED: FULL WIDTH + PHOTOS INSIDE CARDS) */
+        .history-layout {
+            display: block; /* full width */
         }
 
-        .day-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .day-heading {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .agenda-item {
-            border-radius: 14px;
-            padding: 10px 12px;
-            border: 1px solid rgba(148,163,184,0.35);
-            background: rgba(15,23,42,0.95);
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
-
-        .agenda-time {
-            font-weight: 600;
-            font-size: 12px;
-            margin-bottom: 2px;
-        }
-
-        .agenda-title {
-            font-size: 13px;
-            margin-bottom: 2px;
-        }
-
-        .agenda-meta {
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-        .agenda-note {
-            font-size: 12px;
-            color: var(--text-muted);
+        .timeline {
+            position: relative;
+            padding-left: 26px;
             margin-top: 6px;
+        }
+
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 10px;
+                top: 6px;
+                bottom: 6px;
+                width: 2px;
+                background: linear-gradient( to bottom, rgba(30, 207, 255, 0.9), rgba(255, 185, 74, 0.9), rgba(255, 63, 104, 0.9) );
+                border-radius: 99px;
+                opacity: 0.9;
+            }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -4px;
+            top: 12px;
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: radial-gradient(circle at top left, rgba(255, 185, 74, 0.9), rgba(255, 85, 74, 0.9));
+            box-shadow: 0 0 0 2px rgba(175, 199, 255, 0.18);
+            border: 1px solid rgba(175, 199, 255, 0.7);
+        }
+
+        .timeline-card {
+            border-radius: 18px;
+            padding: 14px 14px 14px;
+            background: radial-gradient(circle at top left, rgba(30, 207, 255, 0.22), transparent 60%), linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            box-shadow: 0 2px 2px rgba(15, 23, 42, 0.85);
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            gap: 14px;
+            align-items: center;
+        }
+
+        .timeline-top {
+            display: flex;
+            gap: 10px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #e5e7eb;
+        }
+
+        .timeline-badge {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(175, 199, 255, 0.55);
+            background: rgba(3, 8, 54, 0.7);
+            color: var(--text-muted);
+        }
+
+        .timeline-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 0 4px;
+            color: #fff;
+        }
+
+        .timeline-desc {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.65;
+            color: var(--text-muted);
+        }
+
+        .timeline-media {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(148,163,184,0.35);
+            background: rgba(15,23,42,0.9);
+            box-shadow: 0 18px 45px rgba(15,23,42,0.55);
+        }
+
+            .timeline-media img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+                display: block;
+            }
+
+        .timeline-callout {
+            margin-top: 12px;
+            padding: 12px 12px;
+            border-radius: 16px;
+            border: 1px dashed rgba(148, 163, 184, 0.5);
+            background: rgba(3, 8, 54, 0.45);
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+            .timeline-callout strong {
+                color: #fff;
+            }
+
+        /* Mobile */
+        @media (max-width: 840px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                padding-top: 40px;
+            }
+
+            .section-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .nav-inner {
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                justify-content: flex-start;
+            }
+
+            .timeline-card {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .timeline-media img {
+                height: 200px;
+            }
         }
 
         /* VENUE */
@@ -492,16 +577,6 @@
             background: radial-gradient(circle at top, rgba(37,99,235,0.3), transparent 55%), linear-gradient(to bottom right, #020617, #020617);
             padding: 14px 14px 16px;
             font-size: 12px;
-        }
-
-        .venue-map-placeholder {
-            border-radius: 12px;
-            border: 1px dashed rgba(148,163,184,0.5);
-            padding: 16px;
-            margin-top: 8px;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
         }
 
         /* COMMUNITY */
@@ -550,53 +625,6 @@
             color: var(--text-muted);
         }
 
-        /* HISTORY / PHOTOS */
-        .history-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
-            gap: 22px;
-            align-items: flex-start;
-        }
-
-        .history-timeline {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-            .history-timeline ul {
-                padding-left: 18px;
-                margin: 10px 0 0;
-            }
-
-            .history-timeline li {
-                margin-bottom: 6px;
-            }
-
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-        }
-
-        .photo-card {
-            border-radius: 14px;
-            overflow: hidden;
-            background: rgba(15,23,42,0.9);
-            border: 1px solid rgba(148,163,184,0.4);
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-            .photo-card img {
-                width: 100%;
-                display: block;
-            }
-
-        .photo-caption {
-            padding: 6px 8px 8px;
-        }
-
         /* REGISTER / CTA STRIP */
         .cta-strip {
             max-width: 1080px;
@@ -609,10 +637,10 @@
             border: 1px solid rgba(148,163,184,0.5);
             background: radial-gradient(circle at top left, rgba(37,99,235,0.4), transparent 52%), linear-gradient(to right, #020617, #020617);
             padding: 18px 18px 20px;
-            display: grid;
-            grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
-            gap: 24px;
-            align-items: center;
+            display: flex;
+            flex-direction: column; 
+            gap: 16px;
+            align-items: flex-start;
         }
 
         .cta-text-main {
@@ -624,14 +652,35 @@
         .cta-text-sub {
             font-size: 13px;
             color: var(--text-muted);
-            max-width: 460px;
+            max-width: 100%;
         }
 
+        /* CTA: larger buttons + centered */
         .cta-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            justify-content: flex-end;
+            gap: 16px; /* more breathing room */
+            justify-content: center;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+            /* Bigger CTA buttons */
+            .cta-buttons .btn {
+                padding: 14px 28px; /* bigger hit area */
+                font-size: 15px;
+                font-weight: 600;
+                border-radius: 999px;
+                min-width: 260px; /* keeps buttons visually balanced */
+                text-align: center;
+            }
+
+        /* Mobile polish */
+        @media (max-width: 640px) {
+            .cta-buttons .btn {
+                width: 100%; /* full-width buttons on mobile */
+                min-width: unset;
+            }
         }
 
         /* FOOTER */
@@ -659,42 +708,11 @@
             gap: 12px;
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE (other grids) */
         @media (max-width: 840px) {
-            .hero {
-                grid-template-columns: minmax(0, 1fr);
-                padding-top: 40px;
-            }
-
-            .hero-right {
-                order: -1;
-            }
-
-            .section-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .agenda-columns,
             .venue-layout,
             .two-col,
-            .history-layout,
             .cta-box {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .nav-inner {
-                flex-wrap: wrap;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .cta-buttons {
-                justify-content: flex-start;
-            }
-
-            .photo-grid {
                 grid-template-columns: minmax(0, 1fr);
             }
         }
@@ -713,7 +731,6 @@
                     <a href="#history">History</a>
                     <a href="#agenda">Agenda</a>
                     <a href="#venue">Venue</a>
-                    <a href="#community">Who it's for</a>
                 </nav>
                 <div class="nav-cta">
                     <a href="#register" class="btn btn-primary">Reserve my seat</a>
@@ -726,15 +743,14 @@
             <section class="hero-wrap" id="top">
                 <div class="hero">
                     <div class="hero-left">
-                        <!--<h1 class="hero-title">
-                            <span class="gradient">AI POWER AGENTS</span>
-                        </h1>-->
+                        <h1 class="hero-title">
+                            <span class="gradient">TWO DAY FREE EVENT</span>
+                        </h1>
                         <!--<div class="hero-kicker">
-                            <span>Community Conference</span>
-                        </div>-->
+                    <span>Community Conference</span>
+                </div>-->
                         <p class="hero-tagline">
-                            Two days of deep dives into Microsoft Business Applications and the Power Platform — with real solutions,
-                            case-studies, and architectures powered by AI agents and copilots.
+                            Middle-East's largest Power Platform Free Community Event is back with a new format!
                         </p>
                         <div class="hero-meta">
                             <div class="hero-meta-item">
@@ -749,12 +765,12 @@
                                     <div class="hero-kicker">Microsoft Israel R&D Center, Herzliya</div>
                                 </div>
                             </div>
-                            <div class="hero-meta-item">
-                                <div>
-                                    <div class="hero-meta-label">Format</div>
-                                    <div>Keynotes • Sessions • Demos • Community</div>
-                                </div>
-                            </div>
+                            <!--<div class="hero-meta-item">
+                        <div>
+                            <div class="hero-meta-label">Format</div>
+                            <div>Keynotes • Sessions • Demos • Community</div>
+                        </div>
+                    </div>-->
                         </div>
                         <div class="hero-actions">
                             <a href="#register" class="btn btn-primary">Reserve my seat</a>
@@ -765,32 +781,22 @@
                     <div class="hero-right">
                         <div class="hero-card">
                             <div class="pill-row">
+                                <span class="pill">Agentic AI</span>
                                 <span class="pill">Power Platform</span>
                                 <span class="pill">Business Applications</span>
-                                <span class="pill">Agentic AI</span>
                             </div>
-                            <div class="hero-card-title">What to expect</div>
-                            <div class="hero-card-sub">Built for makers, architects, and leaders shipping solutions on the Microsoft stack.</div>
+                            <!--<div class="hero-card-title">TWO DAY EVENT</div>
+                    <div class="hero-card-sub">Middle-East's largest Power Platform Free Community Event is back with a new format</div>-->
                             <div class="hero-grid">
                                 <div class="hero-grid-item">
-                                    <div class="hero-grid-label">Track</div>
-                                    <div class="hero-grid-value">Business Apps × AI</div>
-                                    <div class="hero-grid-label">Dynamics 365, Power Platform, real projects.</div>
+                                    <div class="hero-grid-label">Day 1</div>
+                                    <div class="hero-grid-value">Workshops</div>
+                                    <div class="hero-grid-label">Enjoy a full day of hands on training with Microsoft MVPs from around the world and Product Engineers from M365, Office and Copilot Studio teams. </div>
                                 </div>
                                 <div class="hero-grid-item">
-                                    <div class="hero-grid-label">Sessions</div>
-                                    <div class="hero-grid-value">Keynotes & case-studies</div>
-                                    <div class="hero-grid-label">From architecture to delivery, grounded in real customers.</div>
-                                </div>
-                                <div class="hero-grid-item">
-                                    <div class="hero-grid-label">Hands-on</div>
-                                    <div class="hero-grid-value">AI agents in practice</div>
-                                    <div class="hero-grid-label">Copilot, custom agents, and MCP-backed patterns.</div>
-                                </div>
-                                <div class="hero-grid-item">
-                                    <div class="hero-grid-label">Community</div>
-                                    <div class="hero-grid-value">Local + global experts</div>
-                                    <div class="hero-grid-label">Connect with practitioners across Israel and beyond.</div>
+                                    <div class="hero-grid-label">Day 2</div>
+                                    <div class="hero-grid-value">Breakout sessions</div>
+                                    <div class="hero-grid-label">Dozens of breakout sessions delivered by Industry leaders (Product Managers, Engineers, MVPs and Partners)</div>
                                 </div>
                             </div>
                         </div>
@@ -798,121 +804,138 @@
                 </div>
             </section>
 
-            <!-- ABOUT -->
+            <!-- COMMUNITY / WHO IT'S FOR -->
             <section class="section" id="about">
                 <div class="section-header">
                     <div>
-                        <div class="section-kicker">About the event</div>
-                        <h2 class="section-title">Where Business Applications meet AI agents.</h2>
+                        <!--<div class="section-kicker">ABOUT THE EVENT</div>-->
+                        <h2 class="section-title">ABOUT THE EVENT</h2>
                     </div>
                 </div>
                 <div class="">
                     <p style="text-align: justify;">
                         AI POWER AGENTS is now in its third edition, evolving from its original roots as “Dynamics Power Israel.”
                         The Biz Apps community in Israel is one of the most vibrant in the region, and this conference exists
-                        to give that community a home for deep technical content, real-world stories, and meaningful networking.
+                        to give that community a home for deep technical content, real-world stories, and meaningful networking. The event is for:
                     </p>
                 </div>
-                <div class="section-grid">
-                    <article class="card">
-                        <h3>For makers & consultants</h3>
-                        <p>
-                            See how others are using AI to accelerate delivery: building apps faster, automating complex processes,
-                            and augmenting users with copilots instead of replacing them.
-                        </p>
-                        <ul>
-                            <li>Model-driven & canvas apps with AI infused flows</li>
-                            <li>Copilot Studio, plugins, virtual agents, and more</li>
-                            <li>Practices you can reuse the moment you get back</li>
+                <div class="two-col">
+                    <div>
+                        <div class="section-kicker">Who it's for</div>
+                        <ul class="list-check">
+                            <li>Power Platform makers, admins, and consultants</li>
+                            <li>Dynamics 365 Customer Engagement implementers and ISVs</li>
+                            <li>Cloud solution architects and tech leads</li>
+                            <li>Developers building plugins, integrations, or custom agents</li>
+                            <li>Business leaders driving digital transformation with Microsoft tech</li>
                         </ul>
-                    </article>
-
-                    <article class="card">
-                        <h3>For architects & tech leads</h3>
-                        <p>
-                            Learn reference architectures, governance patterns, and design decisions behind AI-ready Business
-                            Applications on the Microsoft stack.
-                        </p>
-                        <ul>
-                            <li>Dataverse, Dynamics 365, and Power Pages at scale</li>
-                            <li>Agentic patterns using MCPs and external services</li>
-                            <li>Security, compliance, and responsible AI in practice</li>
-                        </ul>
-                    </article>
-
-                    <article class="card">
-                        <h3>For leaders & decision makers</h3>
-                        <p>
-                            Hear how organizations are moving from experiments to value: rolling out AI-assisted experiences
-                            that users actually adopt.
-                        </p>
-                        <ul>
-                            <li>Use-cases that resonate with business stakeholders</li>
-                            <li>Change management for AI-powered workflows</li>
-                            <li>Measuring impact and ROI across teams</li>
-                        </ul>
-                    </article>
+                    </div>
+                    <div>
+                        <div class="section-kicker">CORE CONTENT</div>
+                        <div style="font-size:13px; color:var(--text-muted); margin-bottom:10px;">
+                            We’ll bring perspectives from Microsoft MVPs, partners, and practitioners who design and run Business
+                            Applications every day — highlighting how AI agents are changing how they plan, build, and operate solutions.
+                        </div>
+                        <div class="tag-cloud">
+                            <span class="tag">Agentic AI</span>
+                            <span class="tag">Power Platform</span>
+                            <span class="tag">Copilot Studio</span>
+                            <span class="tag">Dynamics 365</span>
+                            <span class="tag">M365</span>
+                            <span class="tag">Microsoft Office</span>
+                            <span class="tag">MCP</span>
+                            <span class="tag">GitHub Copilot</span>
+                            <span class="tag">ALM & Governance</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- HISTORY & PHOTOS -->
+            <!-- HISTORY (FULL WIDTH TIMELINE + IMAGES IN CARDS) -->
             <section class="section" id="history">
                 <div class="section-header">
                     <div>
                         <div class="section-kicker">History & Highlights</div>
                         <h2 class="section-title">From Dynamics Power Israel to AI POWER AGENTS.</h2>
                     </div>
-                    <!--<p class="section-lead">
-                        What started as a Dynamics-focused meetup has grown into a full community conference for everyone
-                        building on Microsoft Business Applications and the Power Platform.
-                    </p>-->
                 </div>
 
                 <div class="history-layout">
-                    <div class="history-timeline">
-                        <p>
-                            The conference began as <strong>Dynamics Power Israel</strong>, a grassroots gathering for local
-                            Dynamics 365 professionals. As low-code and AI became central to how Israeli organizations build
-                            solutions, the event evolved into <strong>AI POWER AGENTS Community Conference</strong>, reflecting
-                            a broader focus on Power Platform, AI agents, and copilots.
-                        </p>
-                        <ul>
-                            <li><strong class="section-kicker-small">2019 Edition:</strong> Dynamics Power Israel — Dynamics 365–centric, early Biz Apps community roots.</li>
-                            <li><strong class="section-kicker-small">2023 Edition:</strong> Expansion into Power Platform, automation, and early AI-powered scenarios.</li>
-                            <li><strong class="section-kicker-small-highlight">2026 Edition:</strong> AI POWER AGENTS at Microsoft Herzliya — full focus on agentic AI, copilots, and end-to-end Biz Apps solutions.</li>
-                        </ul>
-                        <p style="margin-top:10px;">
-                            Hosting the event at the <strong>Microsoft Herzliya Campus</strong> makes this edition truly special.
-                            The campus is a sustainable “city of work” with air-to-water generators, a pet playground, advanced
-                            accessibility features, and flexible green spaces — all designed to blend high-tech innovation with
-                            employee well-being and a vibrant community feel.
-                        </p>
-                        <p style="margin-top:10px;">
-                            Looking ahead to the <strong>2026 edition</strong>, the vision is to host <strong>300+ community members</strong>
-                            for a full day of amazing content, networking, and app building — all accelerated by AI.
-                        </p>
-                    </div>
+                    <p style="text-align: justify; color: var(--text-muted); font-size: 13px; line-height: 1.7; margin-top: 0; max-width: 920px;">
+                        The conference began as <strong>Dynamics Power Israel</strong>, a grassroots gathering for local
+                        Dynamics 365 professionals. As low-code and AI became central to how Israeli organizations build
+                        solutions, the event evolved into <strong>AI POWER AGENTS Community Conference</strong>.
+                    </p>
 
-                    <div>
-                        <div class="section-kicker" style="margin-bottom:8px;">Photo highlights</div>
-                        <div class="photo-grid">
-                            <!-- Replace these src values with real photos from previous editions -->
-                            <!--<div class="photo-card">
-                                <img src="imgs/community1.JPEG" alt="Previous conference session">
-                                <div class="photo-caption">Packed breakout session from a previous edition.</div>
-                            </div>-->
-                            <div class="photo-card">
-                                <img src="imgs/community2.JPEG" alt="Community networking" height="100%">
+                    <div class="timeline">
+                        <!-- 2019 (with community2.JPEG) -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div>
+                                    <div class="timeline-top">
+                                        <div class="timeline-year">2019</div>
+                                        <div class="timeline-badge">Edition 1</div>
+                                    </div>
+                                    <div class="timeline-title">Dynamics Power Israel</div>
+                                    <p class="timeline-desc">
+                                        Dynamics 365–centric sessions and the early roots of the Biz Apps community in Israel.
+                                    </p>
+                                </div>
+                                <div class="timeline-media">
+                                    <img src="imgs/community2.JPEG" alt="2019 community highlight">
+                                </div>
                             </div>
-                            <!--<div class="photo-card">
-                                <img src="imgs/community3.JPEG" alt="Speaker on stage">
-                                <div class="photo-caption">Speaker sharing real-world Biz Apps architecture.</div>
-                            </div>-->
-                            <div class="photo-card">
-                                <img src="imgs/community4.JPEG" alt="Hands-on building">
+                        </div>
+
+                        <!-- 2023 (with community4.JPEG) -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div>
+                                    <div class="timeline-top">
+                                        <div class="timeline-year">2023</div>
+                                        <div class="timeline-badge">Edition 2</div>
+                                    </div>
+                                    <div class="timeline-title">Dynamics Power Israel</div>
+                                    <p class="timeline-desc">
+                                        Broadened scope into Power Platform, automation, and early AI-powered scenarios.
+                                    </p>
+                                </div>
+                                <div class="timeline-media">
+                                    <img src="imgs/community4.JPEG" alt="2023 community highlight">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2026 (no photo) -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card" style="border-color: rgba(255,185,74,0.9);">
+                                <div>
+                                    <div class="timeline-top">
+                                        <div class="timeline-year" style="color:#FFB94A;">2026</div>
+                                        <div class="timeline-badge" style="border-color: rgba(255,185,74,0.8); color:#FFB94A;">Edition 3</div>
+                                    </div>
+                                    <div class="timeline-title">AI POWER AGENTS @ Microsoft Herzliya</div>
+                                    <p class="timeline-desc">
+                                        Full focus on agentic AI, copilots, and end-to-end Business Applications on the Microsoft stack.
+                                    </p>
+                                </div>
+                                <div class="timeline-media">
+                                    <img src="imgs/campus1.JPG" alt="2026 community highlight">
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!--<div class="timeline-callout" style="max-width: 920px;">
+                        Hosting the event at the <strong>Microsoft Herzliya Campus</strong> makes this edition truly special —
+                        a sustainable “city of work” designed for innovation, accessibility, and community.
+                        <br /><br />
+                        Looking ahead to <strong>2026</strong>, the vision is to host <strong>300+ community members</strong> for a full day
+                        of deep content, networking, and app building — all accelerated by AI.
+                    </div>-->
                 </div>
             </section>
 
@@ -927,9 +950,9 @@
 
                 <div class="card" style="padding: 30px; text-align: center;">
                     <!--<h3 style="margin-top:0;">Sessionize Agenda Embed</h3>
-                    <p style="font-size:13px; color:var(--text-muted); max-width:600px; margin:10px auto 20px;">
+            <p style="font-size:13px; color:var(--text-muted); max-width:600px; margin:10px auto 20px;">
 
-                    </p>-->
+            </p>-->
                     <!-- SESSIONIZE EMBED PLACEHOLDER -->
                     <div style="border:1px dashed rgba(148,163,184,0.4); padding:25px; border-radius:12px; color:var(--text-muted); font-size:13px; background-color:#fff">
 
@@ -966,58 +989,17 @@
                     </div>
                     <div class="venue-card">
                         <!-- Microsoft Herzliya Campus Images -->
-                        <img src="imgs/campus1.jpg" alt="Microsoft Herzliya Campus" style="width:100%; border-radius:12px;">
+                        <!--<img src="imgs/campus1.jpg" alt="Microsoft Herzliya Campus" style="width:100%; border-radius:12px;">-->
 
-                        <!-- GOOGLE MAP EMBED -->
-                        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.297271810361!2d34.81765717570238!3d32.163330117812845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d48e6b46a1d05%3A0xeffee2049ffb4dd!2sMicrosoft%20Israel%20R%26D%20Center!5e0!3m2!1sen!2sil!4v1700000000000"
-                                width="100%"
-                                height="260"
-                                style="border:0; border-radius:12px;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.297271810361!2d34.81765717570238!3d32.163330117812845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d48e6b46a1d05%3A0xeffee2049ffb4dd!2sMicrosoft%20Israel%20R%26D%20Center!5e0!3m2!1sen!2sil!4v1700000000000"
+                        width="100%"
+                        height="260"
+                        style="border:0; border-radius:12px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                        <small style="color:var(--text-muted); display:block; margin-top:10px;">Images and map shown for reference. Exact check-in instructions will be sent to registered attendees.</small>-->
-                    </div>
-                </div>
-            </section>
-
-            <!-- COMMUNITY / WHO IT'S FOR -->
-            <section class="section" id="community">
-                <div class="section-header">
-                    <div>
-                        <div class="section-kicker">Who it's for</div>
-                        <h2 class="section-title">Built for the Business Apps + Power Platform community.</h2>
-                    </div>
-                </div>
-
-                <div class="two-col">
-                    <div>
-                        <ul class="list-check">
-                            <li>Power Platform makers, admins, and consultants</li>
-                            <li>Dynamics 365 Customer Engagement implementers and ISVs</li>
-                            <li>Cloud solution architects and tech leads</li>
-                            <li>Developers building plugins, integrations, or custom agents</li>
-                            <li>Business leaders driving digital transformation with Microsoft tech</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div style="font-size:13px; color:var(--text-muted); margin-bottom:10px;">
-                            We’ll bring perspectives from Microsoft MVPs, partners, and practitioners who design and run Business
-                            Applications every day — highlighting how AI agents are changing how they plan, build, and operate solutions.
-                        </div>
-                        <div class="tag-cloud">
-                            <span class="tag">Power Apps</span>
-                            <span class="tag">Power Automate</span>
-                            <span class="tag">Power Pages</span>
-                            <span class="tag">Copilot Studio</span>
-                            <span class="tag">Dynamics 365</span>
-                            <span class="tag">Dataverse</span>
-                            <span class="tag">Agentic AI</span>
-                            <span class="tag">MCP</span>
-                            <span class="tag">GitHub Copilot</span>
-                            <span class="tag">ALM & Governance</span>
-                        </div>
+                <small style="color:var(--text-muted); display:block; margin-top:10px;">Images and map shown for reference. Exact check-in instructions will be sent to registered attendees.</small>
                     </div>
                 </div>
             </section>
@@ -1034,7 +1016,7 @@
                     </div>
                     <div class="cta-buttons">
                         <!-- Replace # with your registration and CFP URLs (e.g., Microsoft Forms + Sessionize) -->
-                        <a href="#" class="btn btn-primary">Register for the event</a>
+                        <a href="#" class="btn btn-primary">Registration will open soon!</a>
                         <a href="https://sessionize.com/ai-power-agents-2026" target="_blank" class="btn btn-ghost">Submit a session</a>
                     </div>
                 </div>
@@ -1056,6 +1038,3 @@
     </div>
 </body>
 </html>
-
-
-
