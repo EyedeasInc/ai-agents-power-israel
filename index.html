@@ -716,6 +716,243 @@
                 grid-template-columns: minmax(0, 1fr);
             }
         }
+
+
+        /*Sponsors Carousel */
+
+        /* SPONSORS */
+        .sponsors-intro {
+            margin: 0 0 22px;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.75;
+            max-width: 920px;
+            text-align: justify;
+        }
+
+        .sponsor-tier {
+            margin-top: 18px;
+            padding: 18px;
+            border-radius: 22px;
+            border: 1px solid rgba(148,163,184,0.4);
+            background: radial-gradient(circle at top left, rgba(30,207,255,0.16), transparent 60%), radial-gradient(circle at top right, rgba(255,63,104,0.16), transparent 55%), linear-gradient(to bottom right, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
+            box-shadow: 0 18px 45px rgba(15,23,42,0.65);
+        }
+
+        .sponsor-tier-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sponsor-tier-title {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FFB94A;
+        }
+
+        .sponsor-tier-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Carousel shell */
+        .carousel {
+            position: relative;
+            padding: 14px 44px 10px;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 14px;
+            transition: transform 420ms ease;
+            will-change: transform;
+            padding: 10px 6px 14px;
+        }
+
+        /* Sponsor cards */
+        .sponsor-card {
+            flex: 0 0 calc((100% - 28px) / 3); /* 3 at a time (2 gaps = 28px) */
+            border-radius: 18px;
+            border: 1px solid rgba(148,163,184,0.35);
+            /*background: rgba(3,8,54,0.55);*/
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            min-height: 150px; /* PLATINUM default */
+            box-shadow: 0 18px 45px rgba(15,23,42,0.45);
+            transform: scale(0.92);
+            opacity: 0.75;
+            transition: transform 420ms ease, opacity 420ms ease, border-color 420ms ease;
+        }
+
+            .sponsor-card img {
+                width: 100%;
+                max-width: 270px;
+                max-height: 90px;
+                object-fit: contain;
+                filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+            }
+
+            /* Center (featured) card */
+            .sponsor-card.is-active {
+                transform: scale(1.04);
+                opacity: 1;
+                border-color: rgba(255,185,74,0.75);
+                /*background: radial-gradient(circle at top, rgba(255,185,74,0.18), transparent 60%), rgba(3,8,54,0.65);*/
+                background-color:#ffffff;
+            }
+
+        /* Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.5);
+            background: rgba(15,23,42,0.75);
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            line-height: 1;
+            user-select: none;
+        }
+
+            .carousel-btn:hover {
+                border-color: var(--accent);
+            }
+
+            .carousel-btn.prev {
+                left: 8px;
+            }
+
+            .carousel-btn.next {
+                right: 8px;
+            }
+
+        /* Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(175,199,255,0.45);
+            background: rgba(15,23,42,0.6);
+            cursor: pointer;
+        }
+
+            .carousel-dot.is-active {
+                background: linear-gradient(135deg, #1ECFFF, #FFB94A, #FF3F68);
+                border-color: transparent;
+            }
+
+        /* GOLD variant: smaller so Platinum pops */
+        .carousel--gold .sponsor-card {
+            min-height: 80px;
+            padding: 10px;
+            transform: scale(0.90);
+        }
+
+            .carousel--gold .sponsor-card img {
+                max-width: 200px;
+                max-height: 70px;
+            }
+
+            .carousel--gold .sponsor-card.is-active {
+                transform: scale(0.90);
+            }
+
+        /* =========================
+       SPONSOR TIER BACKGROUNDS
+       ========================= */
+
+        /* PLATINUM – premium, luminous, high contrast */
+        .sponsor-tier--platinum {
+            position: relative;
+            border: 1px solid rgba(255,185,74,0.75);
+            background: radial-gradient(circle at top left, rgba(255,185,74,0.45), transparent 55%), radial-gradient(circle at top right, rgba(30,207,255,0.35), transparent 55%), radial-gradient(circle at bottom right, rgba(255,63,104,0.35), transparent 55%), linear-gradient( 135deg, rgba(10,18,96,0.95), rgba(3,8,54,0.98) );
+            box-shadow: 0 30px 80px rgba(255,185,74,0.25), 0 0 0 1px rgba(255,185,74,0.15) inset;
+        }
+
+            /* subtle animated glow */
+            .sponsor-tier--platinum::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 22px;
+                background: linear-gradient( 120deg, transparent 30%, rgba(255,185,74,0.15), transparent 70% );
+                opacity: 0.6;
+                pointer-events: none;
+            }
+            .sponsor-tier--platinum .sponsor-tier-title {
+                color: #FFFFFF;
+                text-shadow: none;
+            }
+
+
+        /* =========================
+        GOLD – elegant but softer
+        ========================= */
+
+            .sponsor-tier--gold {
+                border: 1px solid rgba(148,163,184,0.45);
+                background: radial-gradient(circle at top left, rgba(148,163,184,0.15), transparent 60%), linear-gradient( to bottom right, rgba(15,23,42,0.9), rgba(15,23,42,0.98) );
+                box-shadow: 0 18px 45px rgba(15,23,42,0.6);
+            }
+
+
+
+        /* Responsive */
+        @media (max-width: 840px) {
+            .carousel {
+                padding: 14px 40px 10px;
+            }
+
+            .sponsor-card {
+                min-height: 130px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .sponsor-card {
+                flex: 0 0 100%; /* 1 at a time on mobile */
+                transform: scale(1);
+                opacity: 1;
+            }
+
+                .sponsor-card.is-active {
+                    transform: scale(1);
+                }
+
+            .carousel-track {
+                gap: 10px;
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -728,6 +965,7 @@
                 </div>
                 <nav class="nav-links">
                     <a href="#about">About</a>
+                    <a href="#sponsors">Sponsors</a>
                     <a href="#history">History</a>
                     <a href="#agenda">Agenda</a>
                     <a href="#venue">Venue</a>
@@ -747,8 +985,8 @@
                             <span class="gradient">TWO DAY FREE EVENT</span>
                         </h1>
                         <!--<div class="hero-kicker">
-                    <span>Community Conference</span>
-                </div>-->
+                            <span>Community Conference</span>
+                        </div>-->
                         <p class="hero-tagline">
                             Middle-East's largest Power Platform Free Community Event is back with a new format!
                         </p>
@@ -766,11 +1004,11 @@
                                 </div>
                             </div>
                             <!--<div class="hero-meta-item">
-                        <div>
-                            <div class="hero-meta-label">Format</div>
-                            <div>Keynotes • Sessions • Demos • Community</div>
-                        </div>
-                    </div>-->
+                                <div>
+                                    <div class="hero-meta-label">Format</div>
+                                    <div>Keynotes • Sessions • Demos • Community</div>
+                                </div>
+                            </div>-->
                         </div>
                         <div class="hero-actions">
                             <a href="#register" class="btn btn-primary">Reserve my seat</a>
@@ -786,7 +1024,7 @@
                                 <span class="pill">Business Applications</span>
                             </div>
                             <!--<div class="hero-card-title">TWO DAY EVENT</div>
-                    <div class="hero-card-sub">Middle-East's largest Power Platform Free Community Event is back with a new format</div>-->
+                            <div class="hero-card-sub">Middle-East's largest Power Platform Free Community Event is back with a new format</div>-->
                             <div class="hero-grid">
                                 <div class="hero-grid-item">
                                     <div class="hero-grid-label">May 27th</div>
@@ -847,6 +1085,59 @@
                             <span class="tag">GitHub Copilot</span>
                             <span class="tag">ALM & Governance</span>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPONSORS -->
+            <section class="section" id="sponsors">
+                <div class="section-header">
+                    <div>
+                        <div class="section-kicker">Sponsors</div>
+                        <h2 class="section-title">Powered by the community</h2>
+                    </div>
+                </div>
+
+                <p class="sponsors-intro">
+                    Huge thanks to the partners helping make this event free, accessible, and packed with real-world content.
+                    <!--Want to sponsor? Reach out — we’ll make you look good 😉-->
+                </p>
+
+                <!-- PLATINUM -->
+                <div class="sponsor-tier sponsor-tier--platinum">
+                    <div class="sponsor-tier-header">
+                        <div class="sponsor-tier-title">Platinum</div>
+                    </div>
+
+                    <div class="carousel" data-carousel="platinum">
+                        <button class="carousel-btn prev" type="button" aria-label="Previous sponsors">‹</button>
+
+                        <div class="carousel-viewport">
+                            <div class="carousel-track" id="platinumTrack"></div>
+                        </div>
+
+                        <button class="carousel-btn next" type="button" aria-label="Next sponsors">›</button>
+
+                        <div class="carousel-dots" id="platinumDots" aria-label="Platinum sponsor navigation"></div>
+                    </div>
+                </div>
+
+                <!-- GOLD -->
+                <div class="sponsor-tier sponsor-tier--gold">
+                    <div class="sponsor-tier-header">
+                        <div class="sponsor-tier-title">Gold</div>
+                    </div>
+
+                    <div class="carousel carousel--gold" data-carousel="gold">
+                        <button class="carousel-btn prev" type="button" aria-label="Previous sponsors">‹</button>
+
+                        <div class="carousel-viewport">
+                            <div class="carousel-track" id="goldTrack"></div>
+                        </div>
+
+                        <button class="carousel-btn next" type="button" aria-label="Next sponsors">›</button>
+
+                        <div class="carousel-dots" id="goldDots" aria-label="Gold sponsor navigation"></div>
                     </div>
                 </div>
             </section>
@@ -950,9 +1241,9 @@
 
                 <div class="card" style="padding: 30px; text-align: center;">
                     <!--<h3 style="margin-top:0;">Sessionize Agenda Embed</h3>
-            <p style="font-size:13px; color:var(--text-muted); max-width:600px; margin:10px auto 20px;">
+                    <p style="font-size:13px; color:var(--text-muted); max-width:600px; margin:10px auto 20px;">
 
-            </p>-->
+                    </p>-->
                     <!-- SESSIONIZE EMBED PLACEHOLDER -->
                     <div style="border:1px dashed rgba(148,163,184,0.4); padding:25px; border-radius:12px; color:var(--text-muted); font-size:13px; background-color:#fff">
 
@@ -992,14 +1283,14 @@
                         <!--<img src="imgs/campus1.jpg" alt="Microsoft Herzliya Campus" style="width:100%; border-radius:12px;">-->
 
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.297271810361!2d34.81765717570238!3d32.163330117812845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d48e6b46a1d05%3A0xeffee2049ffb4dd!2sMicrosoft%20Israel%20R%26D%20Center!5e0!3m2!1sen!2sil!4v1700000000000"
-                        width="100%"
-                        height="260"
-                        style="border:0; border-radius:12px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                width="100%"
+                                height="260"
+                                style="border:0; border-radius:12px;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-                <small style="color:var(--text-muted); display:block; margin-top:10px;">Images and map shown for reference. Exact check-in instructions will be sent to registered attendees.</small>
+                        <small style="color:var(--text-muted); display:block; margin-top:10px;">Images and map shown for reference. Exact check-in instructions will be sent to registered attendees.</small>
                     </div>
                 </div>
             </section>
@@ -1036,5 +1327,174 @@
             </div>
         </footer>
     </div>
+    <script>
+        /**
+         * Minimal carousel:
+         * - Shows 3 items on desktop, 1 on mobile (<640px handled by CSS)
+         * - Center item is "active" (bigger). We do this by marking the middle card active.
+         * - Supports prev/next buttons, dots, and optional autoplay.
+         */
+        (function () {
+            const isMobile = () => window.matchMedia("(max-width: 640px)").matches;
+
+            function buildCarousel({ trackId, dotsId, folder, files, autoplayMs }) {
+                const track = document.getElementById(trackId);
+                const dots = document.getElementById(dotsId);
+                if (!track || !dots) return;
+
+                // Build cards
+                track.innerHTML = files.map((f, i) => `
+          <div class="sponsor-card" data-index="${i}">
+            <img src="${folder}/${f}" alt="Sponsor logo ${i + 1}" loading="lazy" />
+          </div>
+        `).join("");
+
+                // Build dots (one per sponsor, but we navigate by "center index")
+                dots.innerHTML = files.map((_, i) => `
+          <button class="carousel-dot" type="button" aria-label="Go to sponsor ${i + 1}" data-dot="${i}"></button>
+        `).join("");
+
+                const cards = Array.from(track.querySelectorAll(".sponsor-card"));
+                const dotBtns = Array.from(dots.querySelectorAll(".carousel-dot"));
+
+                // Find the carousel root for buttons
+                const carouselRoot = track.closest(".carousel");
+                const btnPrev = carouselRoot.querySelector(".carousel-btn.prev");
+                const btnNext = carouselRoot.querySelector(".carousel-btn.next");
+
+                let centerIndex = 0; // the featured sponsor index
+                let timer = null;
+
+                function cardWidth() {
+                    // Each card has a computed width; include gap by measuring offset difference when possible.
+                    const first = cards[0];
+                    if (!first) return 0;
+                    const style = window.getComputedStyle(track);
+                    const gap = parseFloat(style.columnGap || style.gap || "0") || 0;
+                    return first.getBoundingClientRect().width + gap;
+                }
+
+                function clampIndex(i) {
+                    const max = cards.length - 1;
+                    if (i < 0) return max;
+                    if (i > max) return 0;
+                    return i;
+                }
+
+                function setActiveClasses() {
+                    cards.forEach(c => c.classList.remove("is-active"));
+                    dotBtns.forEach(d => d.classList.remove("is-active"));
+
+                    // On desktop, active is the center card. On mobile, the visible card is the "active".
+                    const active = cards[centerIndex];
+                    if (active) active.classList.add("is-active");
+
+                    const activeDot = dotBtns[centerIndex];
+                    if (activeDot) activeDot.classList.add("is-active");
+                }
+
+                function updatePosition() {
+                    // Desktop: show 3 at a time and center the active in the middle slot.
+                    // Mobile: CSS shows 1 per slide; we still translate by 1 card.
+                    const w = cardWidth();
+                    if (!w) return;
+
+                    let offsetCards = centerIndex;
+                    if (!isMobile()) {
+                        // We want active card to appear in the middle of the 3-card viewport.
+                        // So shift left by (centerIndex - 1) cards.
+                        offsetCards = centerIndex - 1;
+                    }
+
+                    // Wrap-around behavior: simplest approach is modulo translate for finite list.
+                    // For small lists, negative offset is fine visually (it will show blanks).
+                    // To avoid blanks, we’ll clamp to range where possible when 3+ items exist.
+                    if (!isMobile() && cards.length >= 3) {
+                        const minOffset = 0;
+                        const maxOffset = cards.length - 3;
+                        offsetCards = Math.min(Math.max(offsetCards, minOffset), maxOffset);
+                    } else {
+                        // mobile: clamp to [0..n-1]
+                        offsetCards = Math.min(Math.max(offsetCards, 0), Math.max(cards.length - 1, 0));
+                    }
+
+                    track.style.transform = `translateX(${-offsetCards * w}px)`;
+                    setActiveClasses();
+                }
+
+                function goTo(i) {
+                    centerIndex = clampIndex(i);
+                    updatePosition();
+                }
+
+                function next() { goTo(centerIndex + 1); }
+                function prev() { goTo(centerIndex - 1); }
+
+                // Button handlers
+                btnNext && btnNext.addEventListener("click", () => { stop(); next(); start(); });
+                btnPrev && btnPrev.addEventListener("click", () => { stop(); prev(); start(); });
+
+                // Dots
+                dotBtns.forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        const i = parseInt(btn.getAttribute("data-dot"), 10);
+                        stop(); goTo(i); start();
+                    });
+                });
+
+                // Autoplay
+                function start() {
+                    if (!autoplayMs) return;
+                    stop();
+                    timer = setInterval(() => next(), autoplayMs);
+                }
+                function stop() {
+                    if (timer) clearInterval(timer);
+                    timer = null;
+                }
+
+                // Recalc on resize
+                window.addEventListener("resize", () => updatePosition());
+
+                // Init
+                goTo(0);
+                start();
+
+                // Pause on hover (desktop)
+                carouselRoot.addEventListener("mouseenter", stop);
+                carouselRoot.addEventListener("mouseleave", start);
+            }
+
+            // ✅ Replace these arrays with your real filenames (exact case matters!)
+            const platinumFiles = [
+                "abra.png",
+                "bizaid.png",
+                "ubitech.svg"
+            ];
+
+            const goldFiles = [
+                "cloudedge.png",
+                "kaduris-digital.png",
+                "zooz-tech.png"
+            ];
+
+            buildCarousel({
+                trackId: "platinumTrack",
+                dotsId: "platinumDots",
+                folder: "sponsors/platinum",
+                files: platinumFiles,
+                autoplayMs: 3200
+            });
+
+            buildCarousel({
+                trackId: "goldTrack",
+                dotsId: "goldDots",
+                folder: "sponsors/gold",
+                files: goldFiles,
+                autoplayMs: 2600
+            });
+        })();
+    </script>
+
 </body>
 </html>
