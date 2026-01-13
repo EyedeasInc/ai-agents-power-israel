@@ -752,12 +752,19 @@
 
             .sponsor-tier--platinum .sponsor-tier-title {
                 color: #fff;
+                text-align: center;
+                font-size: larger;
             }
 
         /* Gold look */
         .sponsor-tier--gold {
             background: radial-gradient(circle at top left, rgba(148,163,184,0.15), transparent 60%), linear-gradient(to bottom right, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
             box-shadow: 0 18px 45px rgba(15,23,42,0.6);
+        }
+
+        .sponsor-tier--gold .sponsor-tier-title {
+            color: #FFB94A;
+            text-align: center;
         }
 
         /* Grid */
@@ -791,8 +798,9 @@
         /* Gold smaller */
         .sponsors-grid--gold .sponsor-card {
             min-height: 80px;
-            transform: scale(.92);
+            transform: scale(.80);
         }
+
 
         .sponsors-grid--gold img {
             max-width: 200px;
@@ -997,12 +1005,14 @@
                     </div>
 
                     <div class="sponsors-grid sponsors-grid--gold">
+                        <div></div>
                         <a class="sponsor-card" href="https://www.cloudedge.co.il/" target="_blank" rel="noopener">
                             <img src="sponsors/gold/cloudedge.png" alt="CloudEdge">
                         </a>
                         <a class="sponsor-card" href="https://www.kaduris.digital/" target="_blank" rel="noopener">
                             <img src="sponsors/gold/kaduris-digital.png" alt="Kaduris Digital">
                         </a>
+                        <div></div>
                     </div>
                 </div>
             </section>
