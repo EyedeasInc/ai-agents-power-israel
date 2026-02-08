@@ -42,6 +42,10 @@
             flex-direction: column;
         }
 
+        .logo{
+            max-width:100vw;
+        }
+
         /* NAV */
         .nav {
             position: sticky;
@@ -89,6 +93,7 @@
             display: flex;
             gap: 10px;
             align-items: center;
+            margin-right:15px;
         }
 
         .btn {
@@ -106,12 +111,22 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #1ECFFF, #FFB94A, #FF3F68);
+            background: linear-gradient(135deg, #FFB94A, #FFB94A, #FF3F68);
+            /*background-color: #FFB94A;*/
             color: #030836;
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.55);
         }
 
             .btn-primary:hover {
+                filter: brightness(1.05);
+                transform: translateY(-1px);
+            }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #1ECFFF, #1E40AF, #030836);
+            color: #FFF;
+        }
+
+            .btn-secondary:hover {
                 filter: brightness(1.05);
                 transform: translateY(-1px);
             }
@@ -510,7 +525,7 @@
             }
 
         /* Mobile */
-        @media (max-width: 840px) {
+        @media (max-width: 970px) {
             .hero {
                 grid-template-columns: minmax(0, 1fr);
                 padding-top: 40px;
@@ -541,292 +556,313 @@
             }
         }
 
-        /* VENUE */
-        .venue-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
-            gap: 24px;
-            align-items: flex-start;
-        }
-
-        .venue-meta {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 14px;
-        }
-
-        .venue-chip-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            font-size: 11px;
-        }
-
-        .chip {
-            padding: 4px 10px;
-            background: rgba(15,23,42,0.9);
-            border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.45);
-            color: var(--text-muted);
-        }
-
-        .venue-card {
-            border-radius: 18px;
-            border: 1px solid rgba(148,163,184,0.5);
-            background: radial-gradient(circle at top, rgba(37,99,235,0.3), transparent 55%), linear-gradient(to bottom right, #020617, #020617);
-            padding: 14px 14px 16px;
-            font-size: 12px;
-        }
-
-        /* COMMUNITY */
-        .two-col {
-            display: grid;
-            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
-            gap: 22px;
-            align-items: flex-start;
-        }
-
-        .list-check {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-            .list-check li {
-                margin-bottom: 8px;
-                position: relative;
-                padding-left: 18px;
+        @media (max-width: 614px) {
+            .nav-cta {
+                visibility: hidden;
+                height:0px;
+            }
+            .hero-left{
+                text-align:center;
             }
 
-                .list-check li::before {
-                    content: "✔";
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    font-size: 11px;
-                    color: #22c55e;
+            .hero-tagline {
+                text-align: center;
+            }
+
+            .hero-meta {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+        }
+            /* VENUE */
+            .venue-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+                gap: 24px;
+                align-items: flex-start;
+            }
+
+            .venue-meta {
+                font-size: 14px;
+                color: var(--text-muted);
+                line-height: 1.6;
+                margin-bottom: 14px;
+            }
+
+            .venue-chip-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .chip {
+                padding: 4px 10px;
+                background: rgba(15,23,42,0.9);
+                border-radius: 999px;
+                border: 1px solid rgba(148,163,184,0.45);
+                color: var(--text-muted);
+            }
+
+            .venue-card {
+                border-radius: 18px;
+                border: 1px solid rgba(148,163,184,0.5);
+                background: radial-gradient(circle at top, rgba(37,99,235,0.3), transparent 55%), linear-gradient(to bottom right, #020617, #020617);
+                padding: 14px 14px 16px;
+                font-size: 12px;
+            }
+
+            /* COMMUNITY */
+            .two-col {
+                display: grid;
+                grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+                gap: 22px;
+                align-items: flex-start;
+            }
+
+            .list-check {
+                list-style: none;
+                padding-left: 0;
+                margin: 0;
+                font-size: 13px;
+                color: var(--text-muted);
+            }
+
+                .list-check li {
+                    margin-bottom: 8px;
+                    position: relative;
+                    padding-left: 18px;
                 }
 
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            font-size: 11px;
-        }
+                    .list-check li::before {
+                        content: "✔";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-size: 11px;
+                        color: #22c55e;
+                    }
 
-        .tag {
-            border-radius: 999px;
-            padding: 4px 9px;
-            background: rgba(15,23,42,0.9);
-            border: 1px solid rgba(148,163,184,0.4);
-            color: var(--text-muted);
-        }
+            .tag-cloud {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 11px;
+            }
 
-        /* REGISTER / CTA STRIP */
-        .cta-strip {
-            max-width: 1080px;
-            margin: 0 auto 56px;
-            padding: 20px 20px 40px;
-        }
-
-        .cta-box {
-            border-radius: 22px;
-            border: 1px solid rgba(148,163,184,0.5);
-            background: radial-gradient(circle at top left, rgba(37,99,235,0.4), transparent 52%), linear-gradient(to right, #020617, #020617);
-            padding: 18px 18px 20px;
-            display: flex;
-            flex-direction: column; 
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .cta-text-main {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .cta-text-sub {
-            font-size: 13px;
-            color: var(--text-muted);
-            max-width: 100%;
-        }
-
-        /* CTA: larger buttons + centered */
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px; /* more breathing room */
-            justify-content: center;
-            width: 100%;
-            margin-top: 8px;
-        }
-
-            /* Bigger CTA buttons */
-            .cta-buttons .btn {
-                padding: 14px 28px; /* bigger hit area */
-                font-size: 15px;
-                font-weight: 600;
+            .tag {
                 border-radius: 999px;
-                min-width: 260px; /* keeps buttons visually balanced */
-                text-align: center;
+                padding: 4px 9px;
+                background: rgba(15,23,42,0.9);
+                border: 1px solid rgba(148,163,184,0.4);
+                color: var(--text-muted);
             }
 
-        /* Mobile polish */
-        @media (max-width: 640px) {
-            .cta-buttons .btn {
-                width: 100%; /* full-width buttons on mobile */
-                min-width: unset;
+            /* REGISTER / CTA STRIP */
+            .cta-strip {
+                max-width: 1080px;
+                margin: 0 auto 56px;
+                padding: 20px 20px 40px;
             }
-        }
 
-        /* FOOTER */
-        footer {
-            border-top: 1px solid rgba(30,64,175,0.7);
-            background: #020617;
-            padding: 18px 20px 22px;
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-
-        .footer-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        /* RESPONSIVE (other grids) */
-        @media (max-width: 840px) {
-            .venue-layout,
-            .two-col,
             .cta-box {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        /* SPONSORS */
-        .sponsors-intro {
-            color: var(--text-muted);
-            font-size: 13px;
-            max-width: 920px;
-            margin-bottom: 24px;
-        }
-
-        .sponsor-tier {
-            margin-top: 22px;
-            padding: 18px;
-            border-radius: 22px;
-            border: 1px solid rgba(148,163,184,0.4);
-        }
-
-        .sponsor-tier-header {
-            margin-bottom: 14px;
-        }
-
-        .sponsor-tier-title {
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        /* Platinum look */
-        .sponsor-tier--platinum {
-            border: 1px solid rgba(255,185,74,0.75);
-            background: radial-gradient(circle at top left, rgba(255,185,74,0.45), transparent 55%), radial-gradient(circle at top right, rgba(30,207,255,0.35), transparent 55%), linear-gradient(135deg, rgba(10,18,96,0.95), rgba(3,8,54,0.98));
-            box-shadow: 0 30px 80px rgba(255,185,74,0.25);
-        }
-
-            .sponsor-tier--platinum .sponsor-tier-title {
-                color: #fff;
-                text-align: center;
-                font-size: larger;
+                border-radius: 22px;
+                border: 1px solid rgba(148,163,184,0.5);
+                background: radial-gradient(circle at top left, rgba(37,99,235,0.4), transparent 52%), linear-gradient(to right, #020617, #020617);
+                padding: 18px 18px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
             }
 
-        /* Gold look */
-        .sponsor-tier--gold {
-            background: radial-gradient(circle at top left, rgba(148,163,184,0.15), transparent 60%), linear-gradient(to bottom right, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
-            box-shadow: 0 18px 45px rgba(15,23,42,0.6);
-        }
-
-        .sponsor-tier--gold .sponsor-tier-title {
-            color: #FFB94A;
-            text-align: center;
-        }
-
-        /* Grid */
-        .sponsors-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        /* Cards */
-        .sponsor-card {
-            background: #ffffff;
-            border-radius: 18px;
-            border: 1px solid rgba(148,163,184,0.35);
-            min-height: 120px;
-            padding: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 18px 45px rgba(15,23,42,0.45);
-            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-        }
-
-            .sponsor-card img {
-                max-width: 260px;
-                max-height: 90px;
-                object-fit: contain;
-                padding: 15px;
+            .cta-text-main {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 8px;
             }
 
-        /* Gold smaller */
-        .sponsors-grid--gold .sponsor-card {
-            min-height: 80px;
-            transform: scale(.80);
-        }
+            .cta-text-sub {
+                font-size: 13px;
+                color: var(--text-muted);
+                max-width: 100%;
+            }
 
+            /* CTA: larger buttons + centered */
+            .cta-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px; /* more breathing room */
+                justify-content: center;
+                width: 100%;
+                margin-top: 8px;
+            }
 
-        .sponsors-grid--gold img {
-            max-width: 200px;
-            max-height: 70px;
-            padding: 5px;
-        }
+                /* Bigger CTA buttons */
+                .cta-buttons .btn {
+                    padding: 14px 28px; /* bigger hit area */
+                    font-size: 15px;
+                    font-weight: 600;
+                    border-radius: 999px;
+                    min-width: 260px; /* keeps buttons visually balanced */
+                    text-align: center;
+                }
 
-        /* Clickable polish */
-        .sponsor-card:hover {
-            transform: translateY(-2px);
-            border-color: rgba(255,185,74,0.7);
-            box-shadow: 0 22px 55px rgba(15,23,42,0.55);
-        }
+            /* Mobile polish */
+            @media (max-width: 640px) {
+                .cta-buttons .btn {
+                    width: 100%; /* full-width buttons on mobile */
+                    min-width: unset;
+                }
+            }
 
-        /* Responsive */
-        @media (max-width: 840px) {
+            /* FOOTER */
+            footer {
+                border-top: 1px solid rgba(30,64,175,0.7);
+                background: #020617;
+                padding: 18px 20px 22px;
+                font-size: 11px;
+                color: var(--text-muted);
+            }
+
+            .footer-inner {
+                max-width: 1080px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                gap: 16px;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            /* RESPONSIVE (other grids) */
+            @media (max-width: 840px) {
+                .venue-layout,
+                .two-col,
+                .cta-box {
+                    grid-template-columns: minmax(0, 1fr);
+                }
+            }
+
+            /* SPONSORS */
+            .sponsors-intro {
+                color: var(--text-muted);
+                font-size: 13px;
+                max-width: 920px;
+                margin-bottom: 24px;
+            }
+
+            .sponsor-tier {
+                margin-top: 22px;
+                padding: 18px;
+                border-radius: 22px;
+                border: 1px solid rgba(148,163,184,0.4);
+            }
+
+            .sponsor-tier-header {
+                margin-bottom: 14px;
+            }
+
+            .sponsor-tier-title {
+                font-size: 14px;
+                font-weight: 800;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+
+            /* Platinum look */
+            .sponsor-tier--platinum {
+                border: 1px solid rgba(255,185,74,0.75);
+                background: radial-gradient(circle at top left, rgba(255,185,74,0.45), transparent 55%), radial-gradient(circle at top right, rgba(30,207,255,0.35), transparent 55%), linear-gradient(135deg, rgba(10,18,96,0.95), rgba(3,8,54,0.98));
+                box-shadow: 0 30px 80px rgba(255,185,74,0.25);
+            }
+
+                .sponsor-tier--platinum .sponsor-tier-title {
+                    color: #fff;
+                    text-align: center;
+                    font-size: larger;
+                }
+
+            /* Gold look */
+            .sponsor-tier--gold {
+                background: radial-gradient(circle at top left, rgba(148,163,184,0.15), transparent 60%), linear-gradient(to bottom right, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
+                box-shadow: 0 18px 45px rgba(15,23,42,0.6);
+            }
+
+                .sponsor-tier--gold .sponsor-tier-title {
+                    color: #FFB94A;
+                    text-align: center;
+                }
+
+            /* Grid */
             .sponsors-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 14px;
             }
-        }
 
-        @media (max-width: 640px) {
-            .sponsors-grid {
-                grid-template-columns: 1fr;
+            /* Cards */
+            .sponsor-card {
+                background: #ffffff;
+                border-radius: 18px;
+                border: 1px solid rgba(148,163,184,0.35);
+                min-height: 120px;
+                padding: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 18px 45px rgba(15,23,42,0.45);
+                transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
             }
-        }
+
+                .sponsor-card img {
+                    max-width: 260px;
+                    max-height: 90px;
+                    object-fit: contain;
+                    padding: 15px;
+                }
+
+            /* Gold smaller */
+            .sponsors-grid--gold .sponsor-card {
+                min-height: 80px;
+                transform: scale(.80);
+            }
+
+
+            .sponsors-grid--gold img {
+                max-width: 200px;
+                max-height: 70px;
+                padding: 5px;
+            }
+
+            /* Clickable polish */
+            .sponsor-card:hover {
+                transform: translateY(-2px);
+                border-color: rgba(255,185,74,0.7);
+                box-shadow: 0 22px 55px rgba(15,23,42,0.55);
+            }
+
+            /* Responsive */
+            @media (max-width: 840px) {
+                .sponsors-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 640px) {
+                .sponsors-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
 
     </style>
 </head>
@@ -836,7 +872,7 @@
         <header class="nav">
             <div class="nav-inner">
                 <div class="brand">
-                    <a href="#"> <img src="imgs/logo.png" /></a>
+                    <a href="#"> <img src="imgs/logo.png" class="logo"/></a>
                 </div>
                 <nav class="nav-links">
                     <a href="#about">About</a>
@@ -887,6 +923,7 @@
                         </div>
                         <div class="hero-actions">
                             <a href="#register" class="btn btn-primary">Reserve my seat</a>
+                            <a href="#sponsors" class="btn btn-secondary">Sponsors</a>
                             <a href="#agenda" class="btn btn-ghost">View agenda</a>
                         </div>
                     </div>
@@ -1193,7 +1230,7 @@
         <footer>
             <div class="footer-inner">
                 <div>
-                    © 2025 AI POWER AGENTS Community. Not an official Microsoft event. Microsoft, Power Platform, Dynamics 365,
+                    © 2026 AI POWER AGENTS Community. Not an official Microsoft event. Microsoft, Power Platform, Dynamics 365,
                     and Copilot are trademarks of Microsoft Corporation.
                 </div>
                 <div class="footer-links">
